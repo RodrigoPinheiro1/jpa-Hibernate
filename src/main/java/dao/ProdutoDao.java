@@ -1,5 +1,6 @@
 package dao;
 
+import br.com.alura.loja.modelo.Categoria;
 import br.com.alura.loja.modelo.Produto;
 
 import javax.persistence.EntityManager;
@@ -19,6 +20,10 @@ public class ProdutoDao {
 
         this.em.persist(produto);
 
+
+    }public  void atualizar (Produto produto){
+
+        this.em.merge(produto);
     }
     public Produto buscarPorId(Long id){
 

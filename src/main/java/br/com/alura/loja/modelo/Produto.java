@@ -22,12 +22,11 @@ public class Produto {
 	private BigDecimal preco;
 	private LocalDate dataCadastro = LocalDate.now();
 //    @Enumerated (EnumType.STRING) //Faz com que as informações fiquem gravadas em texto não por posição
-	@ManyToOne //cardinalidade
+	@ManyToOne (fetch = FetchType.LAZY)//cardinalidade
 	private Categoria categoria; //ENUM.
 
 
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
-
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;

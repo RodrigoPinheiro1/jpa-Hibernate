@@ -15,12 +15,13 @@ public class ItemPedido {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id ;
+    @Column (name = "preco_unitario")
         private BigDecimal precoUnitario;
         private int quantidade;
 
-        @ManyToOne
+        @ManyToOne (fetch = FetchType.LAZY) //mapeamento to one faz tudo automatico carregando tudo;
         private Pedido pedido;
-        @ManyToOne
+        @ManyToOne (fetch = FetchType.LAZY)
         private  Produto produto;
 
     public ItemPedido(int quantidade, Pedido pedido, Produto produto) {
@@ -32,5 +33,10 @@ public class ItemPedido {
 
     public ItemPedido() {
 
+    }
+
+    public BigDecimal getValor() {
+
+        return  precoUnitario.multiply(new BigDecimal(quantidade));
     }
 }
