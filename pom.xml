@@ -5,7 +5,10 @@
 	<groupId>br.com.alura</groupId>
 	<artifactId>loja</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
 
+		<junit.jupiter.version>5.4.0</junit.jupiter.version>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -20,6 +23,20 @@
 	</build>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>

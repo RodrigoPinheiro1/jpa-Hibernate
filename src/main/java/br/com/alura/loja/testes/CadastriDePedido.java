@@ -61,6 +61,9 @@ public class CadastriDePedido {
 
     }
 
+    /**
+     *
+     */
     private static void popularBancoDeDados() {
 
         Categoria celulares = new Categoria("CELULARES");
